@@ -8,21 +8,21 @@ import AddBook from './components/AddBook';
 
 // apollo client set up
 const client = new ApolloClient({
-	uri: 'http://localhost:4000/graphql'
+  uri: 'http://localhost:4000/graphql'
 });
 
 class App extends Component {
-	render() {
-		return (
-			<ApolloProvider client={client}>
-				<div id="main">
-					<h1> GraphQL Reading List </h1>
-					<BookList />
-					<AddBook />
-				</div>
-			</ApolloProvider>
-		);
-	}
+  render() {
+    return (
+      <ApolloProvider client={client}>
+        <div id="main">
+          <h1> GraphQL Reading List </h1>
+          <BookList />
+          <AddBook />
+        </div>
+      </ApolloProvider>
+    );
+  }
 }
 
 export default App;

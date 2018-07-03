@@ -116,38 +116,46 @@ const Mutation = new GraphQLObjectType({
         });
         return book.save();
       }
+    },
+    deleteBook: {
+      type: BookType,
+      args: {
+        id: {
+          name: 'id',
+          type: new GraphQLNonNull(GraphQLID)
+        }
+      },
+      resolve(parent, args) {
+        return Book.findByIdAndRemove(args.id).catch(
+          err => new Error(err)
+        );
+      }
+    },
+    editBook: {
+      type: BookType,
+      args: {
+        id: {
+          name: 'id',
+          type: new GraphQLNonNull(GraphQLID)
+        },
+        name: { type: new GraphQLNonNull(GraphQLString) },
+        genre: { type: new GraphQLNonNull(GraphQLString) },
+        authorId: { type: new GraphQLNonNull(GraphQLID) }
+      },
+      resolve(parent, args) {
+        return Book.findByIdAndUpdate(
+          args.id,
+          {
+            $set: {
+              name: args.name,
+              genre: args.genre,
+              authorId: args.authorId
+            }
+          },
+          { new: true }
+        ).catch(err => new Error(err));
+      }
     }
-    // editBook: {
-    // 	type: BookType,
-    // 	args: {
-    // 		name: { type: new GraphQLNonNull(GraphQLString) },
-    // 		genre: { type: new GraphQLNonNull(GraphQLString) },
-    // 		authorId: { type: new GraphQLNonNull(GraphQLID) }
-    // 	},
-    // 	resolve(parent, args) {
-    // 		let book = new Book({});
-    // 	},
-    // 	async resolve(parent, args) {
-    // 		const response = await fetch(
-    // 			'https://jsonplaceholder.typicode.com/posts',
-    // 			{
-    // 				method: 'POST',
-    // 				body: JSON.stringify({
-    // 					title,
-    // 					body,
-    // 					userId
-    // 				}),
-    // 				headers: {
-    // 					'Content-type':
-    // 						'application/json; charset=UTF-8'
-    // 				}
-    // 			}
-    // 		);
-
-    // 		const post = await response.json;
-    // 		return post;
-    // 	}
-    // }
   }
 });
 

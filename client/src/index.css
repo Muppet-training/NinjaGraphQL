@@ -1,90 +1,130 @@
 body {
-	margin: 0px;
-	padding: 0;
-	font-family: 'Montserrat', sans-serif;
-	font-weight: 100;
-	background: #eee;
+  margin: 0px;
+  padding: 0;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 100;
+  background: #eee;
 }
 
 #main h1 {
-	color: #444;
-	text-align: center;
+  color: #444;
+  text-align: center;
 }
 
 #main {
-	padding: 0px;
-	box-sizing: border-box;
-	width: 60%;
-	height: 100%;
-	padding-right: 60px;
+  padding: 0px;
+  box-sizing: border-box;
+  width: 60%;
+  height: 100%;
+  padding-right: 60px;
 }
 
 #book-list {
-	padding: 0px;
+  padding: 0px;
 }
 
 #book-list li {
-	display: inline-block;
-	margin: 12px;
-	padding: 10px;
-	border-radius: 4px;
-	border: 1px solid #880e4f;
-	box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.3);
-	cursor: pointer;
-	color: #880e4f;
+  display: inline-block;
+  margin: 12px;
+  padding: 10px;
+  border-radius: 4px;
+  border: 1px solid #880e4f;
+  box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  color: #880e4f;
 }
 
 form {
-	background: #fff;
-	padding: 20px;
-	position: fixed;
-	left: 0;
-	bottom: 0;
-	width: 400px;
+  background: #fff;
+  padding: 20px;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 400px;
+}
+
+#delete_button {
+  position: static !important;
+  width: 200px !important;
+  background: #ae1457;
+}
+
+#delete_button button {
+  position: static;
+  font-size: 15px;
+  width: 100%;
+  text-align: left;
+  border: 1px solid #fff;
+  border-radius: 0;
+}
+
+form#edit-book {
+  background: #fff;
+  padding: 20px;
+  position: absolute;
+  left: 0px;
+  bottom: 60px;
+  width: 400px;
+}
+
+.form-title {
+  position: absolute;
+  background: #ae1457;
+  top: 0px;
+  left: 0px;
+  margin: 0px;
+  padding: 2px 5px;
+  color: #fff;
+}
+
+.form-title p {
+  margin: 0px;
 }
 
 form .field {
-	display: grid;
-	grid-template-columns: 1fr 1fr;
-	grid-gap: 10px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 10px;
 }
 
 form label {
-	text-align: right;
-	padding: 6px;
+  text-align: right;
+  padding: 6px;
+  color: #000;
 }
 
 form select,
 form input {
-	margin: 4px;
-	padding: 6px;
-	box-sizing: border-box;
+  margin: 4px;
+  padding: 6px;
+  box-sizing: border-box;
 }
 
 form button {
-	color: #fff;
-	font-size: 30px;
-	height: 40px;
-	width: 40px;
-	background: #ad1457;
-	border: 0;
-	padding: 0 10px;
-	border-radius: 50%;
-	cursor: pointer;
-	position: absolute;
-	bottom: 10px;
-	left: 10px;
+  color: #fff;
+  font-size: 30px;
+  height: 40px;
+  width: 40px;
+  background: #ad1457;
+  border: 0;
+  padding: 0 10px;
+  border-radius: 50%;
+  cursor: pointer;
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  outline: 0;
 }
 
 #book-details {
-	position: fixed;
-	top: 0px;
-	right: 0px;
-	width: 40%;
-	height: 100%;
-	background: #ad1457;
-	padding: 30px;
-	overflow: auto;
-	box-shadow: -2 13 5px rgba(0, 0, 0, 0.3);
-	color: #fff;
+  position: fixed;
+  top: 0px;
+  right: 0px;
+  width: 40%;
+  height: 100%;
+  background: #ad1457;
+  padding: 30px;
+  overflow: auto;
+  box-shadow: -2 13 5px rgba(0, 0, 0, 0.3);
+  color: #fff;
 }
