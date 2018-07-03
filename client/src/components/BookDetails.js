@@ -38,15 +38,9 @@ class BookDetails extends Component {
               return <li key={item.id}>{item.name}</li>;
             })}
           </ul>
-          {/* <form
-            id="delete_button"
-            onSubmit={this.onDeleteClick}
-            key={book.id}
-          > */}
           <button onClick={this.onDeleteClick.bind(this, book.id)}>
             Delete Book
           </button>
-          {/* </form> */}
           <EditBook book={book} />
         </div>
       );
