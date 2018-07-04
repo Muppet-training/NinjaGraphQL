@@ -19,10 +19,13 @@ class EditBook extends Component {
   }
 
   static getDerivedStateFromProps(nextProps, prevState) {
-    console.log('nextProps', nextProps);
-    console.log('prevState', prevState);
+    // console.log('nextProps', nextProps);
+    // console.log('prevState', prevState);
     if (nextProps.book !== prevState.book) {
+      console.log('nextProps', nextProps);
       return { book: nextProps.book };
+    } else {
+      console.log('prevState', prevState);
     }
     return null;
   }
@@ -95,7 +98,7 @@ class EditBook extends Component {
             </select>
           </div>
 
-          <button>+</button>
+          <button id="update_button">+ update</button>
         </form>
       );
     } else {

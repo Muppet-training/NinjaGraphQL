@@ -32,11 +32,19 @@ class BookList extends Component {
     }
   }
 
+  nullSelected() {
+    // alert('You found me');
+    this.setState({ selected: null });
+  }
+
   render() {
     return (
       <div>
         <ul id="book-list">{this.displayBooks()}</ul>
-        <BookDetails bookId={this.state.selected} />
+        <BookDetails
+          bookId={this.state.selected}
+          nullSelected={this.nullSelected.bind(this)}
+        />
       </div>
     );
   }

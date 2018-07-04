@@ -19,10 +19,13 @@ class BookDetails extends Component {
       },
       refetchQueries: [{ query: getBooksQuery }]
     });
+    this.props.nullSelected();
   }
 
   displayBookDetails() {
     const { book } = this.props.data;
+    console.log('bookId: ', this.props.bookId);
+    console.log('book: ', book);
     if (book) {
       return (
         <div>
