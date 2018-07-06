@@ -25,7 +25,7 @@ class BookDetails extends Component {
   displayBookDetails() {
     const { book } = this.props.data;
     console.log('bookId: ', this.props.bookId);
-    console.log('book: ', book);
+    // console.log('book: ', book);
     if (book) {
       return (
         <div>
@@ -57,6 +57,8 @@ class BookDetails extends Component {
   }
 
   render() {
+    const { book } = this.props.data;
+    console.log('book: ', book);
     return <div id="book-details">{this.displayBookDetails()}</div>;
   }
 }
@@ -65,6 +67,7 @@ export default compose(
   graphql(deleteBookMutation, { name: 'deleteBookMutation' }),
   graphql(getBookQuery, {
     options: props => {
+      console.log('props.bookId', props.bookId);
       return {
         variables: {
           id: props.bookId
